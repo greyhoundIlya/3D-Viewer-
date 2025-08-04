@@ -6,11 +6,6 @@ A 3D product configurator built with React and Three.js.
 - **GitHub Pages**: [https://greyhoundilya.github.io/3D-Viewer/](https://greyhoundilya.github.io/3D-Viewer/)
 - **Vercel**: [https://3d-product-configurator.vercel.app/](https://3d-product-configurator.vercel.app/)
 
-## Screenshot
-![](https://github.com/belopot/3d-product-configurator/blob/master/screenshots/image1.jpg)
-
-https://user-images.githubusercontent.com/46432435/229830235-b14330ce-c47c-4d05-8074-119891ccb7b8.mp4
-
 ## Features
 - Interactive 3D model viewing
 - Material selection and customization
