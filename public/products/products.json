@@ -1,0 +1,7 @@
+[
+  {
+    "id": "#product_custom",
+    "label": "My Custom Model",
+    "path": "/products/mymodel/index.json"
+  }
+]

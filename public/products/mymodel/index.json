@@ -1,0 +1,282 @@
+{
+  "name": "Навес",
+  "description": "My custom 3D model description",
+  "envMap": "/envmaps/room1.hdr",
+  "model": "/products/mymodel/model_1.glb",
+  "nodes": [
+    {
+      "id": "Metal",
+      "label": "Металлическая конструкция",
+      "defaultMesh": "Metal",
+      "defaultMaterial": {
+        "name": "Metal shine",
+        "path": "/materials/metal_shine/index.json"
+      },
+      "candidateMeshes": [
+        {
+          "id": "Metal",
+          "label": "Стопчики"
+        }
+      ],
+      "candidateMaterials": [
+        {
+          "name": "Metal shine",
+          "thumbnail": "/materials/metal_shine/preview.jpg",
+          "path": "/materials/metal_shine/index.json"
+        },
+        {
+          "name": "Metal matte",
+          "thumbnail": "/materials/metal_matte/preview.jpg",
+          "path": "/materials/metal_matte/index.json"
+        },
+        {
+          "name": "Gold old",
+          "thumbnail": "/materials/0001/preview.jpg",
+          "path": "/materials/0001/index.json"
+        }
+      ]
+    },
+    {
+      "id": "Fasad",
+      "label": "Фасад",
+      "defaultMesh": "Fasad",
+      "defaultMaterial": {
+        "name": "Leather italian",
+        "path": "/materials/0002/index.json"
+      },
+      "candidateMeshes": [
+        {
+          "id": "Fasad",
+          "label": "Сиденье"
+        }
+      ],
+      "candidateMaterials": [
+        {
+          "name": "Leather italian",
+          "thumbnail": "/materials/0002/preview.jpg",
+          "path": "/materials/0002/index.json"
+        },
+                {
+          "name": "Watermelon",
+          "thumbnail": "/materials/0004/preview.jpg",
+          "path": "/materials/0004/index.json"
+        },
+        {
+          "name": "Cheap wood",
+          "thumbnail": "/materials/0000/preview.jpg",
+          "path": "/materials/0000/index.json"
+        }
+      ]
+    },
+    {
+      "id": "Metal-constuctor",
+      "label": "Металлическая конструкция верх" ,
+      "defaultMesh": "Metal-constuctor",
+      "defaultMaterial": {
+        "name": "Rose wood",
+        "path": "/materials/0003/index.json"
+      },
+      "candidateMeshes": [
+        {
+          "id": "Metal-constuctor",
+          "label": "Дерево"
+        }
+      ],
+      "candidateMaterials": [
+        {
+          "name": "Rose wood",
+          "thumbnail": "/materials/0003/preview.jpg",
+          "path": "/materials/0003/index.json"
+        },
+        {
+          "name": "Watermelon",
+          "thumbnail": "/materials/0004/preview.jpg",
+          "path": "/materials/0004/index.json"
+        },
+        {
+          "name": "Metal shine",
+          "thumbnail": "/materials/metal_shine/preview.jpg",
+          "path": "/materials/metal_shine/index.json"
+        }
+      ]
+    },
+    {
+      "id": "Panel",
+      "label": "Декоративная вставка",
+      "defaultMesh": "Panel",
+      "defaultMaterial": {
+        "name": "Cheap wood",
+        "path": "/materials/0000/index.json"
+      },
+      "candidateMeshes": [
+        {
+          "id": "Panel",
+          "label": "Декоративная вставка"
+        }
+      ],
+      "candidateMaterials": [
+        {
+          "name": "Cheap wood",
+          "thumbnail": "/materials/0000/preview.jpg",
+          "path": "/materials/0000/index.json"
+        },
+        {
+          "name": "Rose wood",
+          "thumbnail": "/materials/0003/preview.jpg",
+          "path": "/materials/0003/index.json"
+        },
+        {
+          "name": "Wood",
+          "thumbnail": "/materials/0006/preview.jpg",
+          "path": "/materials/0006/index.json"
+        },
+        {
+          "name": "Metal matte",
+          "thumbnail": "/materials/metal_matte/preview.jpg",
+          "path": "/materials/metal_matte/index.json"
+        }
+      ]
+    },
+    {
+      "id": "Seat",
+      "label": "Криша",
+      "defaultMesh": "Seat",
+      "defaultMaterial": {
+        "name": "Leather black",
+        "path": "/materials/0002/index.json"
+      },
+      "candidateMeshes": [
+        {
+          "id": "Seat",
+          "label": "Криша"
+        }
+      ],
+      "candidateMaterials": [
+        {
+          "name": "Cheap wood",
+          "thumbnail": "/materials/0000/preview.jpg",
+          "path": "/materials/0000/index.json"
+        },
+        {
+          "name": "Velvet",
+          "thumbnail": "/materials/velvet-001/preview.jpg",
+          "path": "/materials/velvet-001/index.json"
+        },
+        {
+          "name": "Leather black",
+          "thumbnail": "/materials/0005/preview.jpg",
+          "path": "/materials/0005/index.json"
+        },
+        {
+          "name": "Leather italian",
+          "thumbnail": "/materials/0002/preview.jpg",
+          "path": "/materials/0002/index.json"
+        },
+        {
+          "name": "Fabric",
+          "thumbnail": "/materials/fabric-001/preview.jpg",
+          "path": "/materials/fabric-001/index.json"
+        },
+        {
+          "name": "Velvet",
+          "thumbnail": "/materials/velvet-001/preview.jpg",
+          "path": "/materials/velvet-001/index.json"
+        }
+      ]
+    },
+    {
+      "id": "Root",
+      "label": "Декоративная вставка",
+      "defaultMesh": "Root",
+      "defaultMaterial": {
+        "name": "Leather black",
+        "path": "/materials/0000/index.json"
+      },
+      "candidateMeshes": [
+        {
+          "id": "Root",
+          "label": "Декоративная вставка"
+        }
+      ],
+      "candidateMaterials": [
+        {
+          "name": "Cheap wood",
+          "thumbnail": "/materials/0000/preview.jpg",
+          "path": "/materials/0000/index.json"
+        },
+        {
+          "name": "Velvet",
+          "thumbnail": "/materials/velvet-001/preview.jpg",
+          "path": "/materials/velvet-001/index.json"
+        },
+        {
+          "name": "Leather black",
+          "thumbnail": "/materials/0005/preview.jpg",
+          "path": "/materials/0005/index.json"
+        },
+        {
+          "name": "Leather italian",
+          "thumbnail": "/materials/0002/preview.jpg",
+          "path": "/materials/0002/index.json"
+        },
+        {
+          "name": "Fabric",
+          "thumbnail": "/materials/fabric-001/preview.jpg",
+          "path": "/materials/fabric-001/index.json"
+        },
+        {
+          "name": "Velvet",
+          "thumbnail": "/materials/velvet-001/preview.jpg",
+          "path": "/materials/velvet-001/index.json"
+        }
+      ]
+    },
+    {
+      "id": "Wood",
+      "label": "Декоративная вставка",
+      "defaultMesh": "Wood",
+      "defaultMaterial": {
+        "name": "Leather black",
+        "path": "/materials/0000/index.json"
+      },
+      "candidateMeshes": [
+        {
+          "id": "Wood",
+          "label": "Декоративная вставка"
+        }
+      ],
+      "candidateMaterials": [
+        {
+          "name": "Cheap wood",
+          "thumbnail": "/materials/0000/preview.jpg",
+          "path": "/materials/0000/index.json"
+        },
+        {
+          "name": "Velvet",
+          "thumbnail": "/materials/velvet-001/preview.jpg",
+          "path": "/materials/velvet-001/index.json"
+        },
+        {
+          "name": "Leather black",
+          "thumbnail": "/materials/0005/preview.jpg",
+          "path": "/materials/0005/index.json"
+        },
+        {
+          "name": "Leather italian",
+          "thumbnail": "/materials/0002/preview.jpg",
+          "path": "/materials/0002/index.json"
+        },
+        {
+          "name": "Fabric",
+          "thumbnail": "/materials/fabric-001/preview.jpg",
+          "path": "/materials/fabric-001/index.json"
+        },
+        {
+          "name": "Velvet",
+          "thumbnail": "/materials/velvet-001/preview.jpg",
+          "path": "/materials/velvet-001/index.json"
+        }
+      ]
+    }
+  ]
+}

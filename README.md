@@ -1,0 +1,63 @@
+## 3D Viewer
+
+A 3D product configurator built with React and Three.js.
+
+## Live Demo
+- **GitHub Pages**: [https://greyhoundilya.github.io/3D-Viewer/](https://greyhoundilya.github.io/3D-Viewer/)
+- **Vercel**: [https://3d-product-configurator.vercel.app/](https://3d-product-configurator.vercel.app/)
+
+## Screenshot
+![](https://github.com/belopot/3d-product-configurator/blob/master/screenshots/image1.jpg)
+
+https://user-images.githubusercontent.com/46432435/229830235-b14330ce-c47c-4d05-8074-119891ccb7b8.mp4
+
+## Features
+- Interactive 3D model viewing
+- Material selection and customization
+- Real-time rendering with Three.js
+- Responsive design
+
+## Install
+
+Assumes you already have `node` installed. If you already have `yarn` installed you can skip the next command.
+
+    npm install --global yarn
+
+Install all dependencies for node
+
+    yarn install
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.\
+The page will reload if you make edits.
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.
+
+### `yarn serve`
+
+Serves the built app locally for testing.
+
+### `yarn lint`
+
+Run prettier check only
+
+### `yarn fix`
+
+Run prettier with `-fix` (modifies files)
+
+## Technologies Used
+- React 17.0.2
+- Three.js 0.127.0
+- Redux for state management
+- Material-UI for components
+- GSAP for animations
+
+---

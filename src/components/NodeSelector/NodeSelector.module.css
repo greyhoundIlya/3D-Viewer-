@@ -1,0 +1,397 @@
+/* NodeSelector - селектор узлов с темным дизайном */
+.nodeSelector {
+  width: 100px;
+  padding: 0px;
+  overflow: visible;
+  position: relative;
+  /* Отключаем выделение текста */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Отключаем выделение для всех элементов внутри */
+.nodeSelector * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Отключаем выделение для текста опций */
+.optionText {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 1; /* Всегда видимый */
+  pointer-events: auto;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* Отключаем выделение текста */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.nodeSelector::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 800px;
+  height: 550px;
+  background: radial-gradient(
+    ellipse 60% 60% at bottom left,
+    rgba(24, 25, 26, 0.7) 0%,
+    rgba(24, 25, 26, 0.3) 60%,
+    rgba(24, 25, 26, 0) 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s, filter 0.6s;
+  filter: blur(18px);
+}
+
+/* Контейнер для всех опций */
+.optionsContainer {
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+  min-height: 200px;
+}
+
+/* Опции - в виде точек по умолчанию */
+.option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  margin-top: 5px;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Кружок для галочки */
+.circleDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.checkMark {
+  width: 32px;
+  height: 32px;
+  display: block;
+  color: #fff;
+  position: absolute;
+  left: 46%;
+  top: 28%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.circleDot.checked .checkMark {
+  opacity: 1;
+}
+
+/* Цветные квадратики - скрыты на десктопе */
+.statusDot {
+  display: none;
+}
+
+/* Текст опции - скрыт по умолчанию */
+.option::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  z-index: 10;
+}
+
+/* SVG стрелка */
+.arrowIcon {
+  color: #ccc;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.option:hover .arrowIcon {
+  color: #fff;
+}
+
+/* Поворот стрелки когда подменю открыто */
+.optionText .arrowIcon.open {
+  transform: rotate(180deg);
+}
+
+/* Кнопка-переключатель */
+.toggleButton {
+  position: absolute;
+  left: 103px;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ccc;
+  transition: all 0.3s ease;
+  z-index: 15;
+}
+
+.toggleButton:hover {
+  color: #fff;
+  transform: translateY(-50%) scale(1.0);
+}
+
+.toggleButton svg {
+  transition: transform 0.3s ease;
+}
+
+.woodSubmenu {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: slideDown 0.3s ease;
+}
+
+.woodOption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* При наведении на контейнер - текст опции остается видимым */
+.optionsContainer:hover .optionText {
+  opacity: 1;
+}
+
+/* Убираем выделение для выбранных элементов */
+.option.selected {
+  /* Убираем все стили выделения */
+}
+
+.option.selected:hover {
+  transform: scale(1.1);
+}
+
+/* Эффект свечения для точек */
+.option::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.option:hover::before {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+}
+
+/* Дополнительные эффекты */
+.option:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+/* Предотвращение ложных hover событий */
+.option::after {
+  pointer-events: none;
+}
+
+/* Адаптивность - МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 768px) {
+  .nodeSelector {
+    left: 0 !important;
+    top: 0 !important;
+  }
+  
+  .optionsContainer {
+    top: 25px;
+    right: 30px;
+    display: flex;
+    padding: 8px 0;
+    min-height: unset;
+    width: 90vw;
+    align-items: flex-start;
+    gap: 1px;
+    background: transparent;
+  }
+  
+  .option {
+    min-height: 25px;
+    width: 100%;
+    justify-content: flex-start; /* Выравниваем элементы слева */
+    padding: 0 16px; /* Добавляем отступы по краям */
+    align-items: center;
+    background: transparent;
+    position: relative; /* Для позиционирования квадратика */
+  }
+  
+  .circleDot {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0; /* Не сжимать кружок */
+  }
+  
+  .checkMark {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+  }
+  
+  .optionText {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    position: static;
+    text-overflow: ellipsis;
+    left: unset;
+    top: unset;
+    transform: none;
+    opacity: 1 !important;
+    font-size: 14px;
+    padding: 0 8px;
+    border-left: none;
+    color: #ffffff;
+    background: none;
+    white-space: normal;
+    pointer-events: auto;
+    /* Отключаем выделение текста на мобиле */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Показываем цветные квадратики только на мобиле */
+  .statusDot {
+    bottom: 15px;
+    display: block;
+    width: 20px;
+    height: 10px;
+    border-radius: 6px;
+    flex-shrink: 0; /* Не сжимать квадратик */
+    cursor: pointer;
+    margin-left: 12px; /* Отступ от текста */
+    position: absolute;
+    right: 16px; /* Прижимаем к правому краю */
+  }
+
+  .statusDot img {
+    width: 20px;
+    height: 10px;
+  }
+  
+  .option::after {
+    display: none;
+  }
+  
+  /* Отключаем все hover эффекты на мобиле */
+  .optionsContainer:hover .optionText {
+    opacity: 1 !important;
+  }
+  
+  /* Убираем выделение на мобиле */
+  .option.selected {
+    /* Убираем все стили выделения */
+  }
+  
+  .option.selected:hover {
+    transform: none;
+  }
+  
+  .option:hover::before {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  .option:active {
+    transform: none;
+  }
+
+  /* Мобильные стили для новых элементов */
+  .toggleButton {
+    top:57%;
+    left: 120px;
+  }
+
+  .woodSubmenu {
+    margin-left: 0;
+    padding-left: 16px;
+    border-left: 2px solid #333;
+  }
+
+  .woodOption {
+    min-height: 25px;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 16px;
+    align-items: center;
+  }
+}
